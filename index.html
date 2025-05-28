@@ -1,69 +1,1882 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href='https://fonts.googleapis.com/css?family=Protest Riot' rel='stylesheet'>
-        <style>
-            body {
-                font-family: 'Protest Riot';font-size: 22px;
-                 }
-        </style>
+    <title>Gabriel de Oliveira Rodrigues | Portfólio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
+
+<style>
+    /* Importação de fontes */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
+
+/* Reset e configurações gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #3498db;
+    --primary-dark: #2980b9;
+    --secondary: #2ecc71;
+    --secondary-dark: #27ae60;
+    --accent: #e74c3c;
+    --dark: #2c3e50;
+    --light: #ecf0f1;
+    --gray: #95a5a6;
+    --dark-gray: #7f8c8d;
+    --white: #ffffff;
+    --black: #1a1a1a;
+    --background: #f9f9f9;
+    --card: #ffffff;
+    --border: #e0e0e0;
+    --shadow: rgba(0, 0, 0, 0.1);
+    
+    --transition-fast: 0.15s ease;
+    --transition-normal: 0.3s ease;
+    --transition-slow: 0.5s ease;
+    
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+    --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.15);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--background);
+    color: var(--dark);
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary);
+    transition: color var(--transition-normal);
+}
+
+a:hover {
+    color: var(--primary-dark);
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.section {
+    padding: 5rem 0;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    color: var(--dark);
+    margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
+}
+
+.underline {
+    width: 80px;
+    height: 4px;
+    background-color: var(--primary);
+    margin: 0 auto;
+    position: relative;
+}
+
+.underline::before {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 4px;
+    background-color: var(--secondary);
+    left: -20px;
+    top: 0;
+}
+
+/* Botões */
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.375rem;
+    font-weight: 500;
+    text-align: center;
+    transition: all var(--transition-normal);
+    cursor: pointer;
+    border: none;
+    font-size: 1rem;
+}
+
+.btn-sm {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+    color: var(--white);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+
+.btn-secondary {
+    background-color: var(--secondary);
+    color: var(--white);
+}
+
+.btn-secondary:hover {
+    background-color: var(--secondary-dark);
+    color: var(--white);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+
+.btn-outline {
+    background-color: transparent;
+    border: 2px solid var(--primary);
+    color: var(--primary);
+}
+
+.btn-outline:hover {
+    background-color: var(--primary);
+    color: var(--white);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+
+/* Tags */
+.tag {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+    background-color: var(--light);
+    color: var(--dark);
+    transition: all var(--transition-normal);
+}
+
+.tag:hover {
+    background-color: var(--primary);
+    color: var(--white);
+    transform: translateY(-2px);
+}
+
+/* Header e Navegação */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--white);
+    box-shadow: var(--shadow-sm);
+    z-index: 1000;
+    transition: all var(--transition-normal);
+}
+
+.header.scrolled {
+    box-shadow: var(--shadow-md);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.logo h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--dark);
+}
+
+.logo span {
+    color: var(--primary);
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+}
+
+.nav-menu li {
+    margin-left: 1.5rem;
+}
+
+.nav-link {
+    color: var(--dark);
+    font-weight: 500;
+    position: relative;
+    padding: 0.5rem 0;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary);
+    transition: width var(--transition-normal);
+}
+
+.nav-link:hover {
+    color: var(--primary);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all var(--transition-normal);
+    background-color: var(--dark);
+}
+
+/* Hero Section */
+.hero {
+    padding: 8rem 0 5rem;
+    background-color: var(--light);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(52, 152, 219, 0.1) 0%, rgba(46, 204, 113, 0.1) 100%);
+    z-index: 1;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-text {
+    flex: 1;
+    padding-right: 2rem;
+}
+
+.hero-text h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--dark);
+}
+
+.hero-text h2 {
+    font-size: 1.5rem;
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+}
+
+.hero-text p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    color: var(--dark-gray);
+}
+
+.hero-btns {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--white);
+    color: var(--primary);
+    font-size: 1.2rem;
+    transition: all var(--transition-normal);
+    box-shadow: var(--shadow-sm);
+}
+
+.social-icons a:hover {
+    background-color: var(--primary);
+    color: var(--white);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-container {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    border: 5px solid var(--white);
+    background-color: var(--light);
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--light);
+    color: var(--gray);
+    font-size: 5rem;
+}
+
+/* Sobre Section */
+.sobre {
+    background-color: var(--white);
+}
+
+.sobre-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.sobre-text h3 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+    color: var(--dark);
+}
+
+.sobre-text p {
+    margin-bottom: 1.5rem;
+    color: var(--dark-gray);
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.info-item {
+    background-color: var(--light);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-normal);
+}
+
+.info-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.info-item h4 {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+    color: var(--primary);
+}
+
+.info-item p {
+    margin-bottom: 0.5rem;
+    color: var(--dark-gray);
+}
+
+/* Projetos Section */
+.projetos {
+    background-color: var(--background);
+}
+
+.projetos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.projeto-card {
+    background-color: var(--white);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-normal);
+}
+
+.projeto-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-lg);
+}
+
+.projeto-img {
+    height: 200px;
+    overflow: hidden;
+}
+
+.projeto-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-normal);
+}
+
+.projeto-card:hover .projeto-img img {
+    transform: scale(1.05);
+}
+
+.projeto-info {
+    padding: 1.5rem;
+}
+
+.projeto-info h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+    color: var(--dark);
+}
+
+.projeto-info p {
+    margin-bottom: 1rem;
+    color: var(--dark-gray);
+}
+
+.projeto-tags {
+    margin-bottom: 1.25rem;
+}
+
+.projeto-links {
+    display: flex;
+    gap: 1rem;
+}
+
+/* Habilidades Section */
+.habilidades {
+    background-color: var(--white);
+}
+
+.habilidades-content {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.habilidades-tecnicas h3,
+.habilidades-comportamentais h3 {
+    font-size: 1.75rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: var(--dark);
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.skill-category h4 {
+    font-size: 1.25rem;
+    margin-bottom: 1.25rem;
+    color: var(--primary);
+    position: relative;
+    display: inline-block;
+}
+
+.skill-category h4::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background-color: var(--primary);
+}
+
+.skill-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.skill-item {
+    margin-bottom: 0.5rem;
+}
+
+.skill-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.skill-info span {
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.skill-bar {
+    width: 100%;
+    height: 8px;
+    background-color: var(--light);
+    border-radius: 9999px;
+    overflow: hidden;
+}
+
+.skill-level {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+    border-radius: 9999px;
+    transition: width 1s ease;
+}
+
+.soft-skills {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.soft-skill {
+    background-color: var(--light);
+    padding: 2rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-normal);
+}
+
+.soft-skill:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.soft-skill-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    color: var(--primary);
+    font-size: 1.75rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.soft-skill h4 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: var(--dark);
+}
+
+.soft-skill p {
+    color: var(--dark-gray);
+}
+
+/* Certificações Section */
+.certificacoes {
+    background-color: var(--background);
+}
+
+.certificacoes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.cert-category {
+    background-color: var(--white);
+    border-radius: 0.5rem;
+    padding: 2rem;
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-normal);
+}
+
+.cert-category:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.cert-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.cert-logo {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    margin-right: 1rem;
+}
+
+.cert-header h3 {
+    font-size: 1.5rem;
+    color: var(--dark);
+}
+
+.cert-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.cert-item {
+    display: flex;
+    align-items: flex-start;
+}
+
+.cert-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+    color: var(--primary);
+    font-size: 1.25rem;
+}
+
+.cert-info h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: var(--dark);
+}
+
+.cert-info p {
+    font-size: 0.875rem;
+    color: var(--dark-gray);
+}
+
+.badges-section h3 {
+    font-size: 1.75rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: var(--dark);
+}
+
+.badges-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.badge-item {
+    background-color: var(--white);
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-normal);
+}
+
+.badge-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.badge-item img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+}
+
+.badge-item h4 {
+    font-size: 1rem;
+    color: var(--dark);
+}
+
+/* Contato Section */
+.contato {
+    background-color: var(--white);
+}
+
+.contato-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+}
+
+.contato-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.contato-item {
+    display: flex;
+    align-items: flex-start;
+}
+
+.contato-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+    color: var(--primary);
+    font-size: 1.25rem;
+    transition: all var(--transition-normal);
+}
+
+.contato-item:hover .contato-icon {
+    background-color: var(--primary);
+    color: var(--white);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+
+.contato-text h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: var(--dark);
+}
+
+.contato-text p {
+    color: var(--dark-gray);
+}
+
+.contato-form {
+    background-color: var(--light);
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: var(--shadow-md);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--dark);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--border);
+    border-radius: 0.375rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    transition: all var(--transition-normal);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
+
+/* Footer */
+.footer {
+    background-color: var(--dark);
+    color: var(--light);
+    padding: 4rem 0 2rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+.footer-logo h2 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+    color: var(--white);
+}
+
+.footer-logo span {
+    color: var(--primary);
+}
+
+.footer-logo p {
+    color: var(--gray);
+}
+
+.footer-links h3,
+.footer-social h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+    color: var(--white);
+    position: relative;
+    display: inline-block;
+}
+
+.footer-links h3::after,
+.footer-social h3::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background-color: var(--primary);
+}
+
+.footer-links ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.footer-links a {
+    color: var(--gray);
+    transition: all var(--transition-normal);
+}
+
+.footer-links a:hover {
+    color: var(--primary);
+    transform: translateX(5px);
+}
+
+.footer-social .social-icons {
+    margin-top: 1rem;
+}
+
+.footer-social .social-icons a {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--white);
+}
+
+.footer-social .social-icons a:hover {
+    background-color: var(--primary);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-bottom p {
+    color: var(--gray);
+    font-size: 0.875rem;
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .hero-text {
+        padding-right: 0;
+        margin-bottom: 3rem;
+    }
+    
+    .hero-btns {
+        justify-content: center;
+    }
+    
+    .social-icons {
+        justify-content: center;
+    }
+    
+    .image-container {
+        width: 250px;
+        height: 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    .section {
+        padding: 4rem 0;
+    }
+    
+    .section-header h2 {
+        font-size: 2rem;
+    }
+    
+    .hero {
+        padding: 7rem 0 4rem;
+    }
+    
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-text h2 {
+        font-size: 1.25rem;
+    }
+    
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background-color: var(--white);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: var(--shadow-md);
+        padding: 2rem 0;
+        z-index: 999;
+    }
+    
+    .nav-menu.active {
+        left: 0;
+    }
+    
+    .nav-menu li {
+        margin: 1.5rem 0;
+    }
+    
+    .hamburger {
+        display: block;
+    }
+    
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-btns {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .image-container {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .projetos-grid,
+    .certificacoes-grid,
+    .badges-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .contato-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .footer-links h3::after,
+    .footer-social h3::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .footer-links ul {
+        align-items: center;
+    }
+    
+    .footer-social .social-icons {
+        justify-content: center;
+    }
+}
+
+/* Animações */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fadeIn {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.animate-slideInLeft {
+    animation: slideInLeft 0.5s ease forwards;
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.animate-slideInRight {
+    animation: slideInRight 0.5s ease forwards;
+}
+
+/* Placeholder para imagens de projetos */
+.projeto-img {
+    background-color: var(--light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gray);
+    font-size: 3rem;
+}
+
+/* Placeholder para logos de certificações */
+.cert-logo {
+    background-color: var(--light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gray);
+    font-size: 1.5rem;
+}
+
+/* Placeholder para badges */
+.badge-item img {
+    background-color: var(--light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gray);
+    font-size: 2.5rem;
+    border-radius: 50%;
+}
+
+</style>
+
 <body>
-    
-    <h1>Gabriel Oliveira</h1>
-    <p>Aluno senai</p>
-    <p>Esta fonte é do tipo</p>
-    <p>Atividade desafio para criar página HTML com cor e tipografia</p>
-    <p>Coisas que eu gosto muito</p>
-    <ul>
-        <li>conversar com minha namorada</li>
-        <li>jogar fps ou racing</li>
-        <li>andar de bike</li>
-        <li>academia</li>
-        <li></li>
-
-    </ul>
-    <div class="cor1"></div>
-    <div class="cor2"></div>
-    <div class="cor3"></div>
-    <div class="cor4"></div>
-    <div class="cor5"></div>
-    
-    <font color="#800080">Este texto está roxo.</font>
-
-
-    <div class="img1">
-        <div class="img1">
-          <img src="https://im.vsco.co/aws-us-west-2/74b05f/185856418/65bd05f5014cd25c90155877/vsco_020224.jpg?w=600" alt="">
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <h1>Gabriel<span>Dev</span></h1>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#home" class="nav-link">Início</a></li>
+                    <li><a href="#sobre" class="nav-link">Sobre</a></li>
+                    <li><a href="#projetos" class="nav-link">Projetos</a></li>
+                    <li><a href="#habilidades" class="nav-link">Habilidades</a></li>
+                    <li><a href="#certificacoes" class="nav-link">Certificações</a></li>
+                    <li><a href="#contato" class="nav-link">Contato</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
         </div>
+    </header>
 
-    <div class="img2">
-        <div class="img2">
-            <img src="https://im.vsco.co/aws-us-west-2/74b05f/185856418/659adb0cf124a319866e09a5/vsco_010724.jpg?w=960" alt="">
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Gabriel de Oliveira Rodrigues</h1>
+                    <h2>Desenvolvedor Full Stack</h2>
+                    <p>Técnico em Análise e Desenvolvimento de Sistemas, certificado em Azure, Google Cloud e Oracle. Versátil, com habilidades em desenvolvimento full stack, infraestrutura de redes e modelagem 3D.</p>
+                    <div class="hero-btns">
+                        <a href="#projetos" class="btn btn-primary">Ver Projetos</a>
+                        <a href="#contato" class="btn btn-outline">Contato</a>
+                    </div>
+                    <div class="social-icons">
+                        <a href="https://github.com/oliveeira2610" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/gabriel-de-oliveira-rodrigues-pompeiasp/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-codepen"></i></a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="image-container">
+                        <!-- Placeholder para imagem de perfil -->
+                        <div class="profile-placeholder">
+                            <i class="fas fa-user"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+    </section>
 
-       
+    <!-- Sobre Section -->
+    <section id="sobre" class="section sobre">
+        <div class="container">
+            <div class="section-header">
+                <h2>Sobre Mim</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="sobre-content">
+                <div class="sobre-text">
+                    <h3>Quem sou eu</h3>
+                    <p>Profissional Técnico em Análise e Desenvolvimento de Sistemas com certificações internacionais (Azure, Google Cloud, Oracle). Perfil versátil, com atuação em desenvolvimento full stack, infraestrutura de redes e modelagem 3D. Destaque para proatividade, foco em soluções inovadoras e rápida adaptação a ambientes dinâmicos e desafiadores.</p>
+                    
+                    <h3>Objetivo</h3>
+                    <p>Atuar na área de Desenvolvimento de Sistemas ou Infraestrutura de TI, contribuindo para o crescimento da empresa com inovação, responsabilidade e excelência técnica.</p>
+                    
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <h4>Formação</h4>
+                            <p>Curso Técnico em Análise e Desenvolvimento de Sistemas</p>
+                            <p>Senai Shunji Nishimura – 2025</p>
+                        </div>
+                        <div class="info-item">
+                            <h4>Localização</h4>
+                            <p>São Paulo, Brasil</p>
+                        </div>
+                        <div class="info-item">
+                            <h4>Idiomas</h4>
+                            <p>Português (Nativo)</p>
+                            <p>Inglês (Intermediário técnico)</p>
+                        </div>
+                        <div class="info-item">
+                            <h4>Interesses</h4>
+                            <p>Desenvolvimento Web</p>
+                            <p>Cloud Computing</p>
+                            <p>Modelagem 3D</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Projetos Section -->
+    <section id="projetos" class="section projetos">
+        <div class="container">
+            <div class="section-header">
+                <h2>Meus Projetos</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="projetos-grid">
+                <!-- Projeto 1 -->
+                <div class="projeto-card">
+                    <div class="projeto-img">
+                        <img src="img/projeto1.jpg" alt="Sistema de Gerenciamento de Biblioteca">
+                    </div>
+                    <div class="projeto-info">
+                        <h3>Sistema de Gerenciamento de Biblioteca</h3>
+                        <p>Projeto acadêmico com aplicação web full stack usando Node.js, React e SQLite. Implementação de login seguro com autenticação JWT.</p>
+                        <div class="projeto-tags">
+                            <span class="tag">Node.js</span>
+                            <span class="tag">React</span>
+                            <span class="tag">SQLite</span>
+                            <span class="tag">JWT</span>
+                        </div>
+                        <div class="projeto-links">
+                            <a href="#" class="btn btn-sm btn-outline"><i class="fas fa-link"></i> Demo</a>
+                            <a href="#" class="btn btn-sm btn-outline"><i class="fab fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Projeto 2 -->
+                <div class="projeto-card">
+                    <div class="projeto-img">
+                        <img src="img/projeto2.jpg" alt="Modelagem 3D de Protótipo">
+                    </div>
+                    <div class="projeto-info">
+                        <h3>Modelagem 3D de Protótipo de Equipamento Agrícola</h3>
+                        <p>Modelagem de peças e animação de funcionamento com Autodesk Fusion 360 e Tinkercad.</p>
+                        <div class="projeto-tags">
+                            <span class="tag">Fusion 360</span>
+                            <span class="tag">Tinkercad</span>
+                            <span class="tag">Modelagem 3D</span>
+                        </div>
+                        <div class="projeto-links">
+                            <a href="#" class="btn btn-sm btn-outline"><i class="fas fa-link"></i> Demo</a>
+                            <a href="#" class="btn btn-sm btn-outline"><i class="fab fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Projeto 3 -->
+                <div class="projeto-card">
+                    <div class="projeto-img">
+                        <img src="img/projeto3.jpg" alt="Implantação de Rede Local">
+                    </div>
+                    <div class="projeto-info">
+                        <h3>Implantação de Rede Local para Pequena Empresa</h3>
+                        <p>Estruturação de rede cabeada e Wi-Fi, configuração de roteadores e segurança com Cisco Packet Tracer e Fortinet.</p>
+                        <div class="projeto-tags">
+                            <span class="tag">Redes</span>
+                            <span class="tag">Cisco</span>
+                            <span class="tag">Fortinet</span>
+                            <span class="tag">Wi-Fi</span>
+                        </div>
+                        <div class="projeto-links">
+                            <a href="#" class="btn btn-sm btn-outline"><i class="fas fa-link"></i> Demo</a>
+                            <a href="#" class="btn btn-sm btn-outline"><i class="fab fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Projeto 4 -->
+                <div class="projeto-card">
+                    <div class="projeto-img">
+                        <img src="img/projeto4.jpg" alt="Aplicativo Móvel">
+                    </div>
+                    <div class="projeto-info">
+                        <h3>Aplicativo Móvel para Gestão de Tarefas</h3>
+                        <p>Liderança técnica no desenvolvimento de um aplicativo móvel que auxilia na organização e no gerenciamento de tarefas pessoais e profissionais.</p>
+                        <div class="projeto-tags">
+                            <span class="tag">Mobile</span>
+                            <span class="tag">React Native</span>
+                            <span class="tag">Firebase</span>
+                        </div>
+                        <div class="projeto-links">
+                            <a href="#" class="btn btn-sm btn-outline"><i class="fas fa-link"></i> Demo</a>
+                            <a href="#" class="btn btn-sm btn-outline"><i class="fab fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Habilidades Section -->
+    <section id="habilidades" class="section habilidades">
+        <div class="container">
+            <div class="section-header">
+                <h2>Minhas Habilidades</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="habilidades-content">
+                <div class="habilidades-tecnicas">
+                    <h3>Habilidades Técnicas</h3>
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h4>Linguagens</h4>
+                            <div class="skill-items">
+                                <div class="skill-item">
+                                    <div class="skill-info">
+                                        <span>JavaScript</span>
+                                        <span>85%</span>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div class="skill-level" style="width: 85%;"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <div class="skill-info">
+                                        <span>Python</span>
+                                        <span>75%</span>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div class="skill-level" style="width: 75%;"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <div class="skill-info">
+                                        <span>HTML/CSS</span>
+                                        <span>90%</span>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div class="skill-level" style="width: 90%;"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <div class="skill-info">
+                                        <span>C#</span>
+                                        <span>70%</span>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div class="skill-level" style="width: 70%;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-category">
+                            <h4>Frameworks</h4>
+                            <div class="skill-items">
+                                <div class="skill-item">
+                                    <div class="skill-info">
+                                        <span>React.js</span>
+                                        <span>80%</span>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div class="skill-level" style="width: 80%;"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <div class="skill-info">
+                                        <span>Node.js</span>
+                                        <span>85%</span>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div class="skill-level" style="width: 85%;"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <div class="skill-info">
+                                        <span>Bootstrap</span>
+                                        <span>90%</span>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div class="skill-level" style="width: 90%;"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <div class="skill-info">
+                                        <span>Vite</span>
+                                        <span>75%</span>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div class="skill-level" style="width: 75%;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-category">
+                            <h4>Banco de Dados</h4>
+                            <div class="skill-items">
+                                <div class="skill-item">
+                                    <div class="skill-info">
+                                        <span>MySQL</span>
+                                        <span>85%</span>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div class="skill-level" style="width: 85%;"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <div class="skill-info">
+                                        <span>SQLite</span>
+                                        <span>80%</span>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div class="skill-level" style="width: 80%;"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <div class="skill-info">
+                                        <span>Firebase</span>
+                                        <span>75%</span>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div class="skill-level" style="width: 75%;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-category">
+                            <h4>Cloud</h4>
+                            <div class="skill-items">
+                                <div class="skill-item">
+                                    <div class="skill-info">
+                                        <span>Azure</span>
+                                        <span>80%</span>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div class="skill-level" style="width: 80%;"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <div class="skill-info">
+                                        <span>Google Cloud</span>
+                                        <span>75%</span>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div class="skill-level" style="width: 75%;"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <div class="skill-info">
+                                        <span>Oracle Cloud</span>
+                                        <span>70%</span>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div class="skill-level" style="width: 70%;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="habilidades-comportamentais">
+                    <h3>Habilidades Comportamentais</h3>
+                    <div class="soft-skills">
+                        <div class="soft-skill">
+                            <div class="soft-skill-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h4>Trabalho em Equipe</h4>
+                            <p>Capacidade de colaborar efetivamente com colegas, compartilhar conhecimento e contribuir para objetivos comuns.</p>
+                        </div>
+                        <div class="soft-skill">
+                            <div class="soft-skill-icon">
+                                <i class="fas fa-comments"></i>
+                            </div>
+                            <h4>Comunicação Clara</h4>
+                            <p>Habilidade de expressar ideias de forma concisa e compreensível, tanto verbalmente quanto por escrito.</p>
+                        </div>
+                        <div class="soft-skill">
+                            <div class="soft-skill-icon">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <h4>Resolução de Problemas</h4>
+                            <p>Capacidade de identificar desafios, analisar situações complexas e desenvolver soluções eficazes.</p>
+                        </div>
+                        <div class="soft-skill">
+                            <div class="soft-skill-icon">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <h4>Agilidade de Aprendizado</h4>
+                            <p>Facilidade para adquirir novos conhecimentos e adaptar-se rapidamente a novas tecnologias e metodologias.</p>
+                        </div>
+                        <div class="soft-skill">
+                            <div class="soft-skill-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <h4>Comprometimento</h4>
+                            <p>Dedicação para cumprir prazos e entregar trabalhos com alta qualidade e atenção aos detalhes.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificações Section -->
+    <section id="certificacoes" class="section certificacoes">
+        <div class="container">
+            <div class="section-header">
+                <h2>Certificações</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="certificacoes-grid">
+                <!-- Microsoft -->
+                <div class="cert-category">
+                    <div class="cert-header">
+                        <img src="img/microsoft-logo.png" alt="Microsoft" class="cert-logo">
+                        <h3>Microsoft</h3>
+                    </div>
+                    <div class="cert-list">
+                        <div class="cert-item">
+                            <div class="cert-icon"><i class="fab fa-microsoft"></i></div>
+                            <div class="cert-info">
+                                <h4>Azure Fundamentals (AZ-900)</h4>
+                                <p>Fundamentos de computação em nuvem e serviços Azure</p>
+                            </div>
+                        </div>
+                        <div class="cert-item">
+                            <div class="cert-icon"><i class="fab fa-microsoft"></i></div>
+                            <div class="cert-info">
+                                <h4>Cloud Data Deployment and Analysis (DP-900)</h4>
+                                <p>Implementação e análise de dados na nuvem</p>
+                            </div>
+                        </div>
+                        <div class="cert-item">
+                            <div class="cert-icon"><i class="fab fa-microsoft"></i></div>
+                            <div class="cert-info">
+                                <h4>Artificial Intelligence Services (AI-900)</h4>
+                                <p>Serviços de IA na nuvem</p>
+                            </div>
+                        </div>
+                        <div class="cert-item">
+                            <div class="cert-icon"><i class="fab fa-microsoft"></i></div>
+                            <div class="cert-info">
+                                <h4>Cloud Security Fundamentals (SC-900)</h4>
+                                <p>Fundamentos de segurança na nuvem</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Google -->
+                <div class="cert-category">
+                    <div class="cert-header">
+                        <img src="img/google-logo.png" alt="Google" class="cert-logo">
+                        <h3>Google</h3>
+                    </div>
+                    <div class="cert-list">
+                        <div class="cert-item">
+                            <div class="cert-icon"><i class="fab fa-google"></i></div>
+                            <div class="cert-info">
+                                <h4>Google Cloud AI Foundations</h4>
+                                <p>Implementação de serviços de IA na nuvem</p>
+                            </div>
+                        </div>
+                        <div class="cert-item">
+                            <div class="cert-icon"><i class="fab fa-google"></i></div>
+                            <div class="cert-info">
+                                <h4>Google Cloud Foundations</h4>
+                                <p>Implementação de serviços na nuvem</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Outros -->
+                <div class="cert-category">
+                    <div class="cert-header">
+                        <img src="img/other-logo.png" alt="Outros" class="cert-logo">
+                        <h3>Outros</h3>
+                    </div>
+                    <div class="cert-list">
+                        <div class="cert-item">
+                            <div class="cert-icon"><i class="fas fa-shield-alt"></i></div>
+                            <div class="cert-info">
+                                <h4>Senai: Privacy and Data Protection (LGPD)</h4>
+                                <p>Proteção de dados e privacidade</p>
+                            </div>
+                        </div>
+                        <div class="cert-item">
+                            <div class="cert-icon"><i class="fab fa-oracle"></i></div>
+                            <div class="cert-info">
+                                <h4>Oracle: Cloud Applications Overview</h4>
+                                <p>Visão geral de aplicações na nuvem Oracle</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Badges -->
+            <div class="badges-section">
+                <h3>Badges</h3>
+                <div class="badges-grid">
+                    <div class="badge-item">
+                        <img src="img/badge1.png" alt="Google Cloud Badge">
+                        <h4>Google Cloud - Integrate with Machine Learning APIs</h4>
+                    </div>
+                    <div class="badge-item">
+                        <img src="img/badge2.png" alt="Google Cloud Badge">
+                        <h4>Google Cloud - Create ML Models with BigQuery ML</h4>
+                    </div>
+                    <div class="badge-item">
+                        <img src="img/badge3.png" alt="Google Cloud Badge">
+                        <h4>Google Cloud - Perform Foundational Data, ML, and AI Tasks</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato Section -->
+    <section id="contato" class="section contato">
+        <div class="container">
+            <div class="section-header">
+                <h2>Entre em Contato</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="contato-content">
+                <div class="contato-info">
+                    <div class="contato-item">
+                        <div class="contato-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contato-text">
+                            <h3>Email</h3>
+                            <p>contato@gabrieloliveira.dev</p>
+                        </div>
+                    </div>
+                    <div class="contato-item">
+                        <div class="contato-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contato-text">
+                            <h3>Localização</h3>
+                            <p>São Paulo, Brasil</p>
+                        </div>
+                    </div>
+                    <div class="contato-item">
+                        <div class="contato-icon">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <div class="contato-text">
+                            <h3>GitHub</h3>
+                            <p><a href="https://github.com/oliveeira2610" target="_blank">github.com/oliveeira2610</a></p>
+                        </div>
+                    </div>
+                    <div class="contato-item">
+                        <div class="contato-icon">
+                            <i class="fab fa-linkedin"></i>
+                        </div>
+                        <div class="contato-text">
+                            <h3>LinkedIn</h3>
+                            <p><a href="https://www.linkedin.com/in/gabriel-de-oliveira-rodrigues-pompeiasp/" target="_blank">LinkedIn</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contato-form">
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label for="name">Nome</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Assunto</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mensagem</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>Gabriel<span>Dev</span></h2>
+                    <p>Desenvolvedor Full Stack</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Links Rápidos</h3>
+                    <ul>
+                        <li><a href="#home">Início</a></li>
+                        <li><a href="#sobre">Sobre</a></li>
+                        <li><a href="#projetos">Projetos</a></li>
+                        <li><a href="#habilidades">Habilidades</a></li>
+                        <li><a href="#certificacoes">Certificações</a></li>
+                        <li><a href="#contato">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h3>Redes Sociais</h3>
+                    <div class="social-icons">
+                        <a href="https://github.com/oliveeira2610" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/gabriel-de-oliveira-rodrigues-pompeiasp/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-codepen"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Gabriel de Oliveira Rodrigues. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+
+        // JavaScript para funcionalidades interativas do portfólio
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Menu mobile
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-menu');
+    
+    if (hamburger) {
+        hamburger.addEventListener('click', function() {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+    }
+    
+    // Fechar menu ao clicar em um link
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+        });
+    });
+    
+    // Header com sombra ao rolar
+    const header = document.querySelector('.header');
+    
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+    
+    // Animação das barras de habilidades
+    const skillLevels = document.querySelectorAll('.skill-level');
+    
+    // Função para verificar se um elemento está visível na viewport
+    function isInViewport(element) {
+        const rect = element.getBoundingClientRect();
+        return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
+    }
+    
+    // Função para animar as barras de habilidades quando visíveis
+    function animateSkillBars() {
+        skillLevels.forEach(skill => {
+            if (isInViewport(skill) && !skill.classList.contains('animated')) {
+                skill.classList.add('animated');
+                skill.style.width = skill.style.width || '0%';
+                
+                // Obtém a largura final da barra de progresso
+                const finalWidth = skill.getAttribute('data-width') || skill.parentElement.previousElementSibling.lastElementChild.textContent;
+                
+                // Anima a barra até a largura final
+                skill.style.width = finalWidth;
+            }
+        });
+    }
+    
+    // Verificar e animar as barras ao carregar a página e ao rolar
+    window.addEventListener('load', animateSkillBars);
+    window.addEventListener('scroll', animateSkillBars);
+    
+    // Formulário de contato
+    const contactForm = document.getElementById('contact-form');
+    
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Aqui você pode adicionar a lógica para enviar o formulário
+            // Como estamos usando GitHub Pages, podemos simular o envio
+            
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Enviando...';
+            
+            // Simular envio
+            setTimeout(() => {
+                alert('Mensagem enviada com sucesso! Obrigado pelo contato.');
+                contactForm.reset();
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalText;
+            }, 1500);
+        });
+    }
+    
+    // Adicionar animações aos elementos quando entrarem na viewport
+    const animatedElements = document.querySelectorAll('.projeto-card, .soft-skill, .cert-category, .badge-item');
+    
+    function checkAnimations() {
+        animatedElements.forEach(element => {
+            if (isInViewport(element) && !element.classList.contains('animate-fadeIn')) {
+                element.classList.add('animate-fadeIn');
+            }
+        });
+    }
+    
+    // Verificar e animar elementos ao carregar a página e ao rolar
+    window.addEventListener('load', checkAnimations);
+    window.addEventListener('scroll', checkAnimations);
+});
+
+    </script>
+
+    
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
